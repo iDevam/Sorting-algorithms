@@ -13,11 +13,11 @@ class myThread(threading.Thread):
     
     def run(self):
         self.sorting_alg(self.x)
-        print(self.x)
+        print("Thread " + str(self.threadID) + " finished.")
 
 def main():
     print("Hello world")
-    x = [random.random() for j in range(100)]
+    x = [random.random() for j in range(10000)]
     
     thread1 = myThread(1,quicksort.quickSort,x)
     thread2 = myThread(2,bubblesort.bubbleSort,x)
@@ -25,6 +25,8 @@ def main():
     thread1.start()
     thread2.start()
 
+    thread1.join()
+    thread2.join()
 
 if __name__ == "__main__":
     main()
