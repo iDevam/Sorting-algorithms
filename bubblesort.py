@@ -26,7 +26,7 @@ def main():
         t = time.time()
         bs = bubbleSort(x)
         delta_t = time.time() - t
-        print("Time taken: " + str(delta_t))
+        print("Time taken: " + str(np.round(delta_t,7)) + " s.")
         print("-"*10)
         t_list.append(delta_t)
 
