@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 class bubbleSort():
     
     def __init__(self,x):
-        print("List of length: " + str(len(x)))
+        print("bubbleSort initialised")
         self.sort(x)
 
     def sort(self,x):

@@ -4,18 +4,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class quickSort():
-    
     def __init__(self,x):
-        print("List of length: " + str(len(x)))
-        lo = 0
-        hi = len(x)-1
-        self.sort(x,lo,hi)
+        print("quickSort initialised")
+        self.lo = 0
+        self.hi = len(x)-1
+        self.sort(x,self.lo,self.hi)
 
     def sort(self,x,lo,hi):
         if lo < hi:
             piv_ind = self.partition(x,lo,hi)
             self.sort(x,lo,piv_ind-1)
             self.sort(x,piv_ind+1,hi)
+
+        return x
 
     def partition(self,x,lo,hi):
         piv = x[hi] 
@@ -27,17 +28,6 @@ class quickSort():
         
         x[i], x[hi] = x[hi], x[i]
         return i
-
-
-    def median3(self,x,inds):
-        if x[inds[0]] <= x[inds[1]] <= x[inds[2]] or x[inds[0]] > x[inds[1]] > x[inds[2]]:
-            return inds[1]
-        
-        if x[inds[1]] <= x[inds[0]] <= x[inds[2]] or x[inds[1]] > x[inds[0]] > x[inds[2]]:
-            return inds[0]
-        
-        return inds[2]
-
 
 def main():
     len_list = [2**i for i in range(6,20,1)]
