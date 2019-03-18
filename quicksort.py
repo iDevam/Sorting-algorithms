@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 class quickSort():
     
     def __init__(self,x):
-        print("Hello!")
+        print("List of length: " + str(len(x)))
         lo = 0
         hi = len(x)-1
         self.sort(x,lo,hi)
@@ -47,8 +47,10 @@ def main():
         t = time.time()
         qs = quickSort(x)
         delta_t = time.time() - t
-        print("Time taken: " + str(delta_t))
+        print("Time taken: " + str(np.round(delta_t,7)) + " s.")
+        print("-"*10)
         t_list.append(delta_t)
+    
     plt.loglog(len_list,t_list)
     plt.xlabel('List size')
     plt.ylabel('Time (s)')
