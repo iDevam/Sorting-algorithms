@@ -33,7 +33,7 @@ def main():
     plt.loglog(len_list,t_list)
     plt.xlabel('List size')
     plt.ylabel('Time (s)')
-    plt.title('Quicksort Time Complexity')
+    plt.title('Bubblesort Time Complexity')
     plt.show()
 
 if __name__ == "__main__":
