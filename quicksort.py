@@ -30,22 +30,22 @@ class quickSort():
         return i
 
 def main():
-    len_list = [2**i for i in range(6,20,1)]
+    len_list = [2**i for i in range(3,20,1)]
     t_list = []
     for l in len_list:
-        x = [random.random() for j in range(l)]
+        x = [np.round(random.random(),3) for j in range(l)]
         t = time.time()
         qs = quickSort(x)
         delta_t = time.time() - t
         print("Time taken: " + str(np.round(delta_t,7)) + " s.")
         print("-"*10)
         t_list.append(delta_t)
-    
+ 
     plt.loglog(len_list,t_list)
     plt.xlabel('List size')
     plt.ylabel('Time (s)')
     plt.title('Quicksort Time Complexity')
     plt.show()
-
+    
 if __name__ == "__main__":
     main()
