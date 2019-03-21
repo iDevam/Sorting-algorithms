@@ -3,7 +3,7 @@ Comparison of the following algorithms:
 - bubblesort
 - quicksort
 - heapsort
-- insertion
+- insertion sort
 
 Still to come:
 - merge, selection
