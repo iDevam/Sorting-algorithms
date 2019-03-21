@@ -8,25 +8,24 @@ class quickSort():
         print("quickSort initialised")
         self.lo = 0
         self.hi = len(x)-1
-        self.sort(x,self.lo,self.hi)
+        self.x = x
+        self.sort(self.lo,self.hi)
 
-    def sort(self,x,lo,hi):
+    def sort(self,lo,hi):
         if lo < hi:
-            piv_ind = self.partition(x,lo,hi)
-            self.sort(x,lo,piv_ind-1)
-            self.sort(x,piv_ind+1,hi)
+            piv_ind = self.partition(lo,hi)
+            self.sort(lo,piv_ind-1)
+            self.sort(piv_ind+1,hi)
 
-        return x
-
-    def partition(self,x,lo,hi):
-        piv = x[hi] 
+    def partition(self,lo,hi):
+        piv = self.x[hi] 
         i = lo
         for j in range(lo,hi,1):
-            if x[j] < piv:
-                x[i], x[j] = x[j], x[i]
+            if self.x[j] < piv:
+                self.x[i], self.x[j] = self.x[j], self.x[i]
                 i = i + 1
         
-        x[i], x[hi] = x[hi], x[i]
+        self.x[i], self.x[hi] = self.x[hi], self.x[i]
         return i
 
 def main():

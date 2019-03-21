@@ -7,15 +7,16 @@ class bubbleSort():
     
     def __init__(self,x):
         print("bubbleSort initialised")
-        self.sort(x)
+        self.x = x
+        self.sort()
 
-    def sort(self,x):
+    def sort(self):
         n_swaps = 1
         while n_swaps > 0:
             n_swaps = 0
-            for i in range(len(x)-1):
-                if x[i] > x[i+1]:
-                    x[i], x[i+1] = x[i+1], x[i]
+            for i in range(len(self.x)-1):
+                if self.x[i] > self.x[i+1]:
+                    self.x[i], self.x[i+1] = self.x[i+1], self.x[i]
                     n_swaps = n_swaps + 1
             
 def main():
